@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <!-- spring 적용시 -->
+  <link rel="stylesheet" href="/style/productStyle.css?ver=1">
+  <!-- kakao map script -->
+  <script type="text/javascript" src="/script/kakaomap.js?ver=1"></script>
+  <title>TECHSUPP</title>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="Header">헤더 생성은 스크립트로</header> 
+  <!-- 검색 정렬 -->
+  <div class="ContainerProductSort">컨테이너 생성은 스크립트로</div>
+  <!-- 단일 상품 정보 -->
+  <article class="ProductContent">상품 정보 생성은 스크립트로</article>
+  <!-- 결제 인적 사항 -->
+  <div class="ContainerUserInput">
+    아이디
+    <input type="email" placeholder="아이디">
+    휴대폰 번호
+    <input type="tel" placeholder="휴대폰 번호">
+    <div class="KakaomapContainer">
+      <div class="zipcode">
+        <input type="text" id="sample4_postcode" placeholder="우편번호">
+        <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+      </div>
+      <div class="roadDetailAddress">
+        <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+        <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+      </div>
+    </div>
+
+  </div>
+  <!-- 투자 결정 - 취소 컨테이너 -->
+  <div class="ContainerConfirmCancel">
+    
+    <input type="button" value="투자 확정">
+  
+    <input type="button" value="취소">
+  </div>
+  <!-- 스크립트 -->
+  <script type="text/javascript" src="/script/productMain.js?ver=1"></script>
+  <!-- header 생성 스크립트 -->
+  <script type="text/javascript" src="/script/createHeader.js?ver=1"></script>
+  <!-- productSort 생성 스크립트 -->
+  <script type="text/javascript" src="/script/createContainerProductSort.js?ver=1"></script>
+  <!-- ProductContent 생성 스크립트 -->
+  <script type="text/javascript" src="/script/createInvestProduct.js?ver=1"></script>
+
+  <!--    -->
+  
+
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <footer>
+    footer
+  </footer>
+</body>
+</html>
