@@ -64,6 +64,7 @@ public class UserController {
 
         userService.join(user);
 
+
         return new ResponseEntity<>("Successfully Registered", HttpStatus.OK);
     }
 
