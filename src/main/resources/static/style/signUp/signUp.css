@@ -60,9 +60,6 @@
     #emailHelp {
         display: flex;
         justify-content: start;
-        color: #FA3E3E;
-        font-weight: bold;
-        font-size: 15px;
     }
 
     #password-same {

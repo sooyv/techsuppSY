@@ -36,14 +36,27 @@ public class UserController {
         return mav;
     }
 
-    // 회원가입 창
-    @GetMapping("/signUp")
+    // 회원가입 창 이동
+    @GetMapping("/signup")
     public ModelAndView Signup() {
         ModelAndView mav = new ModelAndView("/signUp/signUp");
         return mav;
     }
 
-    @PostMapping("user/signUp")
+    // 회원가입 이메일 중복 검사
+    @PostMapping("/signup/checkid")
+    @ResponseBody
+    public int checkid(@RequestParam("id") String id, @RequestParam("type") String type) {
+        String result = userService.checkId(id, type);
+        if(result != null && result.equals("0")) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+
+    // 회원가입
+    @PostMapping("user/signup")
     public ResponseEntity<String> signUpUser(@RequestParam("userName") String userName,
                                              @RequestParam("email") String email,
                                              @RequestParam("password") String password,
@@ -53,9 +66,6 @@ public class UserController {
         System.out.println(password);
         System.out.println(userPhone);
 
-
-        // password와 checkpassword 를 같이 가져와서 비교?
-
         User user = new User();
         user.setUserName(userName);
         user.setUserEmail(email);
@@ -64,10 +74,10 @@ public class UserController {
 
         userService.join(user);
 
-
-
         return new ResponseEntity<>("Successfully Registered", HttpStatus.OK);
     }
+
+
 
     // 비밀번호 일치 검사
 //    @PostMapping("/signUp")

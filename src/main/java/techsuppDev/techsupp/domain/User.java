@@ -39,11 +39,14 @@ public class User {
 
     public User createUser(String userName, String userEmail, String userPassword, String userPhone) {
         User user = new User();
-        user.userName = userName;
-//        user.setUserEmail(userEmail);?
-        user.userEmail = userEmail;
-        user.userPassword = userPassword;
-        user.userPhone = userPhone;
+        user.setUserEmail(userEmail);
+        user.setUserName(userName);
+        user.setUserPassword(userPassword);
+        user.setUserPhone(userPhone);
+//        user.userName = userName;
+//        user.userEmail = userEmail;
+//        user.userPassword = userPassword;
+//        user.userPhone = userPhone;
         return user;
     }
 }

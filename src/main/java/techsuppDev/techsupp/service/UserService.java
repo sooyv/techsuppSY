@@ -33,7 +33,7 @@ public class UserService {
     }
 
 
-    // 아이디 중복검증
+    // 이메일 중복검증
     private void validateDuplicateUser(User user) {
         List<User> findUserEmail = userRepository.findByUserEmail(user.getUserEmail());
         if (!findUserEmail.isEmpty()) {
@@ -41,6 +41,18 @@ public class UserService {
         }
     }
 
+    // 이메일 중복 검증
+    public String checkId(String email, String type) {
+        if (type.equals("email")) {
+            List<User> users = userRepository.findByUserEmail(email);
+            if(users.isEmpty()) {
+                return "0";
+            }
+            return "1";
+        }
+
+        return "0";
+    }
 
 
 
