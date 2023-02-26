@@ -20,7 +20,7 @@ $("#email").on("keyup", function(event) {
     var emailRegExp = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
 
     // email 형식 정규화
-    if (!emailRegExp.test($("#email").val())) {
+    if (!emailRegExp.test($email.val())) {
         idchk = false;
         var emailHelp = document.getElementById("emailHelp");
         emailHelp.innerHTML = "이메일 형식에 맞게 작성해주세요"
@@ -135,8 +135,12 @@ $(document).ready(function () {
         console.log(response);
       },
       error: function (error) {
+        $("#signUpBtn").addClass('shake');
+            setTimeout(function() {
+                $("#signUpBtn").removeClass('shake'); // 0.5초 후 shake 클래스 제거
+            }, 800);
         console.log(error);
-      },
+      }
     });
   });
 });
